@@ -1,7 +1,7 @@
 from app import app
-from app.controllers.home_controller import HomeController
+from app.controllers.detection_controller import DetectionController
 
 
-@app.route('/', methods=["GET"])
-def test():
-    return HomeController.index()
+@app.route("/predict", methods=["POST"])
+def predict():
+    return DetectionController.predict()
